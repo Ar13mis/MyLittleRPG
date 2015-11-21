@@ -1,0 +1,11 @@
+﻿Build started 11/21/2015 1:11:48 PM.
+     1>Project "C:\Users\Ar'tay L'thorien\Desktop\Coding\ItemTesting\ItemTesting\ItemTesting.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Ar'tay L'thorien\Downloads\SFML-2.3.2-windows-vc14-32-bit\SFML-2.3.2\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\ItemTesting.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\..\..\..\Ar'tay L'thorien\Desktop\Coding\ItemTesting\ItemTesting\ItemTesting.cpp"
+         ItemTesting.cpp
+     1>c:\users\ar'tay l'thorien\desktop\coding\itemtesting\itemtesting\itemtesting.cpp(128): error C2660: 'Characters::getSpeed': function does not take 1 arguments
+     1>Done Building Project "C:\Users\Ar'tay L'thorien\Desktop\Coding\ItemTesting\ItemTesting\ItemTesting.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.78
