@@ -1,11 +1,22 @@
-﻿Build started 11/21/2015 1:11:48 PM.
-     1>Project "C:\Users\Ar'tay L'thorien\Desktop\Coding\ItemTesting\ItemTesting\ItemTesting.vcxproj" on node 2 (Build target(s)).
+﻿Build started 11/23/2015 7:02:43 PM.
+     1>Project "C:\Users\270040900\Desktop\MyLittleRPG\ItemTesting\ItemTesting.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Ar'tay L'thorien\Downloads\SFML-2.3.2-windows-vc14-32-bit\SFML-2.3.2\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\ItemTesting.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\..\..\..\Ar'tay L'thorien\Desktop\Coding\ItemTesting\ItemTesting\ItemTesting.cpp"
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /IC:\Users\270040900\SFML\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Yu"stdafx.h" /Fp"Debug\ItemTesting.pch" /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Functions.cpp ItemTesting.cpp
          ItemTesting.cpp
-     1>c:\users\ar'tay l'thorien\desktop\coding\itemtesting\itemtesting\itemtesting.cpp(128): error C2660: 'Characters::getSpeed': function does not take 1 arguments
-     1>Done Building Project "C:\Users\Ar'tay L'thorien\Desktop\Coding\ItemTesting\ItemTesting\ItemTesting.vcxproj" (Build target(s)) -- FAILED.
+         Functions.cpp
+     1>c:\users\270040900\desktop\mylittlerpg\itemtesting\functions.cpp(94): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\270040900\desktop\mylittlerpg\itemtesting\functions.cpp(95): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>c:\users\270040900\desktop\mylittlerpg\itemtesting\functions.cpp(97): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\270040900\Desktop\MyLittleRPG\Debug\ItemTesting.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\Users\270040900\SFML\lib "sfml-graphics-d.lib" "sfml-window-d.lib" "sfml-system-d.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\270040900\Desktop\MyLittleRPG\Debug\ItemTesting.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\270040900\Desktop\MyLittleRPG\Debug\ItemTesting.lib" /MACHINE:X86 Debug\Characters.obj
+         Debug\Functions.obj
+         Debug\Item.obj
+         Debug\ItemTesting.obj
+         Debug\stdafx.obj
+         ItemTesting.vcxproj -> C:\Users\270040900\Desktop\MyLittleRPG\Debug\ItemTesting.exe
+     1>Done Building Project "C:\Users\270040900\Desktop\MyLittleRPG\ItemTesting\ItemTesting.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.78
+Time Elapsed 00:00:04.04

@@ -8,6 +8,7 @@
 
 #include "stdafx.h"
 #include "Characters.hpp"
+#include <SFML/Graphics.hpp>
 
 
 // Default Constructor, set some default values
@@ -26,6 +27,12 @@ Characters::Characters(std::string name, int health, float speed)
 	, mSpeed(speed)
 {
 	// Do more constructing here if you would like
+}
+
+//Destructor
+Characters::~Characters() 
+{
+
 }
 
 // Print Item Details

@@ -9,6 +9,7 @@
 #include "stdafx.h"
 #include "Item.hpp"
 #include "Characters.hpp"
+#include "Functions.h"
 #include <sfml/Graphics.hpp>
 #include <iostream>
 #include <vector>
@@ -16,14 +17,13 @@
 #include <time.h>       /* time */
 
 void printItems(const std::vector<Item*> &items);
-void printCharacters(const std::vector<Characters*> &character);
+void printCharacters(std::string name, int health, float speed);
 std::vector<Item*> generateItems(std::vector<Item*> items, std::string name, int cost, float weight, float damage);
-std::vector<Characters*> generateCharacters(std::vector<Characters*> myCharacter, std::string name, int health, float speed);
+std::string generateCharacters(std::string name, int health, float speed);
 
 int main(int argc, const char * argv[]) {
 	// declare vector
 	std::vector<Item*> items;
-	std::vector<Characters*> characters;
 
 	//create character
 	sf::RectangleShape character(sf::Vector2f(40, 40));
@@ -31,17 +31,19 @@ int main(int argc, const char * argv[]) {
 	character.setPosition(10, 10);
 
 	//generate items (name, cost, weight, damage)
-	items = generateItems(items, "Dagger of Suffering", 14, 4, 7.5);
-	items = generateItems(items, "Broadsword", 30, 12, 15.5);
+	items = generateItems(items, "Dagger of Suffering", 14, 4, 7.5f);
+	items = generateItems(items, "Broadsword", 30, 12, 15.5f);
 
 	//print out all of the items
 	printItems(items);
 
-	//generate characters (name, health, speed)
-	characters = generateCharacters(characters, "Ara'teil", 15, 1.0);
+	//generate character
+	std::string *myName = new std::string("Ara'teil");	//set the name
+	int *myHealth = new int(15);						//set the health
+	float *mySpeed = new float(1.f);					//set the speed
 
-	//print out all of the characters
-	printCharacters(characters);
+	//print the character
+	printCharacters(*myName, *myHealth, *mySpeed);
 
 	// create the window
 	sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
@@ -57,6 +59,8 @@ int main(int argc, const char * argv[]) {
 			if (event.type == sf::Event::Closed)
 				window.close();
 		}
+
+		MovingAround(character);
 
 		// clear the window with black color
 		window.clear(sf::Color::Black);
@@ -86,16 +90,13 @@ void printItems(const std::vector<Item*> &items)
 }
 
 //print out all of the characters
-void printCharacters(const std::vector<Characters*> &character) 
+void printCharacters(std::string name, int health, float speed)
 {
 
-	for (auto it = character.begin(); it != character.end(); ++it) 
-	{
+	std::cout << "Name: " << name << std::endl;
+	std::cout << "  Health: " << health << std::endl;
+	std::cout << "   Speed: " << speed << std::endl;
 	
-		Characters *character = *it;
-		character->printDetails(std::cout);
-	
-	}
 }
 
 //create an item and put it in the vector
@@ -109,21 +110,23 @@ std::vector<Item*> generateItems(std::vector<Item*> items, std::string name, int
 
 }
 
-//generate characters
-std::vector<Characters*> generateCharacters(std::vector<Characters*> myCharacter, std::string name, int health, float speed) 
+/*/generate characters
+std::string generateCharacters(std::string name, int health, float speed) 
 {
 
-	Characters *character = new Characters(name, health, speed);
-	myCharacter.push_back(character);
+	//sf::RectangleShape character = new Characters();
 
-	return myCharacter;
+	std::string *myName = new std::string "Hello";
 
-}
+	return *myName;
 
+}*/
+
+/*
 sf::RectangleShape movingAround(sf::RectangleShape shape, std::vector<Characters*> character) 
 {
 
 	//get speed
 	float speed;
-	Characters::getSpeed(speed);
-}
+
+}*/
