@@ -26,6 +26,10 @@ public:
 	// Prints item details
 	void printDetails(std::ostream &out);
 
+	// Move
+	void move(sf::Vector2f offset);
+	void move(float x, float y);
+
 	//getters and setters
 	std::string getName();
 	void setName(std::string name);
@@ -36,11 +40,23 @@ public:
 	float getSpeed();
 	void setSpeed(float speed);
 
-private:
+	sf::Vector2f getPosition();
+	void setPosition(sf::Vector2f position);
+	void setPosition(float x, float y);
+
+	void setTexture(sf::Texture texture);
+	void setTexture(std::string fileName);
+
+	sf::Sprite getShape();
+
+protected:
 	// Private Class Level Variables
 	std::string mName;
 	int mHealth;
 	float mSpeed;
+	sf::Vector2f mPosition;
+	sf::Sprite mSprite;
+	sf::Texture mTexture;
 };
 
 #endif /* Item_hpp */

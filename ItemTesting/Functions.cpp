@@ -7,11 +7,11 @@
 #include "Functions.h"
 
 //Check to see if the shape is at the edge of the window and then reset position
-sf::RectangleShape DecidePosition(sf::RectangleShape shape, float windowX, float windowY, float characterX)
+void DecidePosition(Characters &character, int &windowX, int &windowY, int &characterX)
 {
 
 	//declare variables
-	sf::Vector2f position = shape.getPosition();
+	sf::Vector2f position = character.getPosition();
 	float shapeX = position.x;
 	float shapeY = position.y;
 	float diameter = characterX;
@@ -20,71 +20,66 @@ sf::RectangleShape DecidePosition(sf::RectangleShape shape, float windowX, float
 	if (shapeX > windowX - diameter)
 	{
 
-		shape.setPosition(windowX - diameter, shapeY);
+		character.setPosition(windowX - diameter, shapeY);
 
 	}
 	else if (shapeX < 0)
 	{
 
-		shape.setPosition(0, shapeY);
+		character.setPosition(0, shapeY);
 
 	}
 
 	if (shapeY > windowY - diameter)
 	{
 
-		shape.setPosition(shapeX, windowY - diameter);
+		character.setPosition(shapeX, windowY - diameter);
 
 	}
 	else if (shapeY < 0)
 	{
 
-		shape.setPosition(shapeX, 0);
+		character.setPosition(shapeX, 0);
 
 	}
-
-	return shape;
-
 }
 
 //Move the character around the screen
-sf::RectangleShape MovingAround(sf::RectangleShape shape)
+void MovingAround(Characters &character)
 {
 
 	//declare variables
-	float speed = 2;
+	float speed = character.getSpeed();
 
 	//Check for input
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
 
 		//move right
-		shape.move(speed, 0);
+		character.move(speed, 0);
 
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
 
 		//move left
-		shape.move(-speed, 0);
+		character.move(-speed, 0);
 
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
 
 		//move up
-		shape.move(0, -speed);
+		character.move(0, -speed);
 
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 
 		//move down
-		shape.move(0, speed);
+		character.move(0, speed);
 
 	}
-
-	return shape;
 }
 
 //draw the enemies

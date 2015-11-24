@@ -17,7 +17,7 @@
 #include <time.h>       /* time */
 
 void printItems(const std::vector<Item*> &items);
-void printCharacters(std::string name, int health, float speed);
+void printCharacters(Characters character);
 std::vector<Item*> generateItems(std::vector<Item*> items, std::string name, int cost, float weight, float damage);
 std::string generateCharacters(std::string name, int health, float speed);
 
@@ -25,10 +25,14 @@ int main(int argc, const char * argv[]) {
 	// declare vector
 	std::vector<Item*> items;
 
+	//declare variables
+	int windowX = 800;
+	int windowY = 600;
+	int characterSize = 40;
+
 	//create character
-	sf::RectangleShape character(sf::Vector2f(40, 40));
-	character.setFillColor(sf::Color(200, 0, 200, 255));
-	character.setPosition(10, 10);
+	Characters character("Character", 100, 5.0f);
+	character.setSpeed(1.0f);
 
 	//generate items (name, cost, weight, damage)
 	items = generateItems(items, "Dagger of Suffering", 14, 4, 7.5f);
@@ -37,16 +41,11 @@ int main(int argc, const char * argv[]) {
 	//print out all of the items
 	printItems(items);
 
-	//generate character
-	std::string *myName = new std::string("Ara'teil");	//set the name
-	int *myHealth = new int(15);						//set the health
-	float *mySpeed = new float(1.f);					//set the speed
-
 	//print the character
-	printCharacters(*myName, *myHealth, *mySpeed);
+	printCharacters(character);
 
 	// create the window
-	sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+	sf::RenderWindow window(sf::VideoMode(windowX, windowY), "My window");
 
 	// run the program as long as the window is open
 	while (window.isOpen())
@@ -61,12 +60,13 @@ int main(int argc, const char * argv[]) {
 		}
 
 		MovingAround(character);
+		DecidePosition(character, windowX, windowY, characterSize);
 
 		// clear the window with black color
 		window.clear(sf::Color::Black);
 
 		// draw everything here...
-		window.draw(character);
+		window.draw(character.getShape());
 
 		// end the current frame
 		window.display();
@@ -90,12 +90,12 @@ void printItems(const std::vector<Item*> &items)
 }
 
 //print out all of the characters
-void printCharacters(std::string name, int health, float speed)
+void printCharacters(Characters character)
 {
 
-	std::cout << "Name: " << name << std::endl;
-	std::cout << "  Health: " << health << std::endl;
-	std::cout << "   Speed: " << speed << std::endl;
+	std::cout << "Name: " << character.getName() << std::endl;
+	std::cout << "  Health: " << character.getHealth() << std::endl;
+	std::cout << "   Speed: " << character.getSpeed() << std::endl;
 	
 }
 

@@ -1,9 +1,10 @@
 #pragma once
+#include "Characters.hpp"
 #ifndef FUNCTIONS_H_
 #define FUNCTIONS_H_
 
-sf::RectangleShape MovingAround(sf::RectangleShape shape);
-sf::RectangleShape DecidePosition(sf::RectangleShape shape, float windowX, float windowY, float characterX);
+void MovingAround(Characters &shape);
+void DecidePosition(Characters &shape, int &windowX, int &windowY, int &characterX);
 sf::RectangleShape RectanglePosition(sf::RectangleShape shape, float windowX, float windowY);
 bool Collision(sf::RectangleShape object1, sf::RectangleShape object2);
 int RandomNumber(int myMod);
